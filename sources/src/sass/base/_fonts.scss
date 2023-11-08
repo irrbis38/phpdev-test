@@ -1,0 +1,23 @@
+/* roboto-condensed-500 */
+@font-face {
+  font-display: swap;
+  font-family: "Roboto Condensed";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/roboto-condensed-v27-cyrillic_latin-500.woff2")
+      format("woff2"),
+    url("../fonts/roboto-condensed-v27-cyrillic_latin-500.woff") format("woff"),
+    url("../fonts/roboto-condensed-v27-cyrillic_latin-500.ttf")
+      format("truetype");
+}
+
+/* arial-400 */
+@font-face {
+  font-display: swap;
+  font-family: "Arial";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Arial-400.woff2") format("woff2"),
+    url("../fonts/Arial-400.woff") format("woff"),
+    url("../fonts/Arial-400.ttf") format("truetype");
+}
