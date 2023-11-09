@@ -183,8 +183,23 @@
 /* filter__tabs styles */
 
 .ftabs {
+  position: relative;
+}
+
+.ftabs__wrapper {
   overflow-x: auto;
   @include hide_scrollbar;
+  padding-bottom: 1px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color_black_200, rgba(7, 0, 15, 0.1));
+  }
 }
 
 .ftabs__list {
@@ -193,7 +208,6 @@
   align-items: center;
   gap: 0 16px;
   padding: 0 15px;
-  border-bottom: $border_black_200;
 
   &::after {
     content: "|";
@@ -248,6 +262,7 @@
 .flables {
   overflow-x: auto;
   @include hide_scrollbar;
+  border-bottom: $border_black_200;
 
   &.empty {
     display: none;
@@ -260,7 +275,6 @@
   align-items: center;
   gap: 0 4px;
   padding: 11px 15px;
-  border-bottom: $border_black_200;
 
   &::after {
     content: "-";
@@ -280,6 +294,13 @@
   border-radius: var(--radius_sm, 8px);
   border: $border_black_200;
   cursor: pointer;
+  transition: border-color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color_black_300, rgba(7, 0, 15, 0.4));
+    }
+  }
 }
 
 .flables__btn--cross {
@@ -298,4 +319,17 @@
     background-position: 0 0;
     background-size: 200% auto;
   }
+}
+
+/* filter__items styles */
+
+.fitems {
+  min-height: 48px;
+  max-height: 248px;
+}
+
+.fitems__wrapper {
+  height: 100%;
+  padding: 8px 0;
+  overflow-x: auto;
 }
