@@ -1,0 +1,105 @@
+.filter {
+  position: relative;
+  min-width: 320px;
+
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.filter__title {
+  margin-bottom: 4px;
+  font-family: var(--ff_arial, "Arial", sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.14px;
+  color: var(--color_black_500, #07000f);
+}
+
+.fbutton {
+  min-width: 320px;
+  min-height: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0 6px;
+  padding: 7px 7px 8px 15px;
+  font-family: var(--ff_roboto, "Roboto Condensed", sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  color: var(--color_black_500, #07000f);
+  background: var(--color_black_100, rgba(2, 22, 45, 0.05));
+  border-radius: var(--radius, 12px);
+  border: 1px solid var(--color_black_200, rgba(7, 0, 15, 0.1));
+  cursor: pointer;
+  transition: border-color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: var(--color_black_300, rgba(7, 0, 15, 0.4));
+    }
+  }
+
+  &.active {
+    border-color: var(--color_black_300, rgba(7, 0, 15, 0.4));
+  }
+
+  .icon,
+  .fbutton__amount {
+    flex-shrink: 0;
+  }
+
+  .fbutton__name {
+    flex-grow: 1;
+  }
+}
+
+.fbutton__name {
+  text-align: left;
+}
+
+.fbutton__amount {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color_white_500, #fff);
+  border-radius: 50%;
+  background-color: var(--color_accent_500, #0067fe);
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease-out, opacity 0.2s ease-out;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: 1px solid var(--color_black_200, rgba(7, 0, 15, 0.1));
+    border-radius: 50%;
+  }
+
+  .fbutton.checked & {
+    visibility: visible;
+    opacity: 1;
+  }
+}

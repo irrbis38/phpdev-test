@@ -2,3 +2,21 @@ extends base/_layout
 block head
     title Main
 block page
+
+    //- .wrapper
+
+    .filter
+        h2.filter__title Локация
+
+        button.filter__btn.fbutton(type="button" aria-label="Показать или скрыть список фильтров")
+            +icon('icon-search')
+            span.fbutton__name ЖК, Округ, район, метро
+            span.fbutton__amount 1
+
+        .filter__dropdown
+            .filter__tabs
+                //- TODO: create tabs
+            .filter__labels 
+                //- TODO: create labels
+            .filter__list
+                //- TODO: create list items
