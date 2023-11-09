@@ -8,6 +8,8 @@ $grid-width: 1170px;
 $grid-gutter: 30px;
 $grid-columns: 12;
 
+$border_black_200: 1px solid var(--color_black_200, rgba(7, 0, 15, 0.1));
+
 :root {
   /* == Colors == */
 
@@ -30,5 +32,6 @@ $grid-columns: 12;
   --ff_arial: "Arial", sans-serif;
 
   /* == Decor == */
-  --radius: 12px;
+  --radius_lg: 12px;
+  --radius_sm: 8px;
 }

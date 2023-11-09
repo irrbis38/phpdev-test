@@ -16,13 +16,17 @@ block page
         .filter__dropdown
 
             .filter__tabs.ftabs
-                .ftabs__list
+                ul.ftabs__list
                     li: button.ftabs__btn.active(type="button" aria-label="Показать список жилых комплексов") Жк
                     li: button.ftabs__btn(type="button" aria-label="Показать список округов") Округ
                     li: button.ftabs__btn(type="button" aria-label="Показать список районов") Район
                     li: button.ftabs__btn(type="button" aria-label="Показать список станций") Метро
 
-            ul.filter__labels.flabels
-                //- TODO: create labels
+            .filter__lables.flables
+                ul.flables__list
+                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
+                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Басманный") Басманный
+                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
+
             ul.filter__list.flist
                 //- TODO: create list items
