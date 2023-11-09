@@ -14,9 +14,15 @@ block page
             span.fbutton__amount 1
 
         .filter__dropdown
-            .filter__tabs
-                //- TODO: create tabs
-            .filter__labels 
+
+            .filter__tabs.ftabs
+                .ftabs__list
+                    li: button.ftabs__btn.active(type="button" aria-label="Показать список жилых комплексов") Жк
+                    li: button.ftabs__btn(type="button" aria-label="Показать список округов") Округ
+                    li: button.ftabs__btn(type="button" aria-label="Показать список районов") Район
+                    li: button.ftabs__btn(type="button" aria-label="Показать список станций") Метро
+
+            ul.filter__labels.flabels
                 //- TODO: create labels
-            .filter__list
+            ul.filter__list.flist
                 //- TODO: create list items

@@ -1,6 +1,6 @@
 .filter {
   position: relative;
-  min-width: 320px;
+  width: 320px;
 
   *,
   ::before,
@@ -11,6 +11,29 @@
   * {
     margin: 0;
     padding: 0;
+  }
+
+  ol,
+  ul,
+  li {
+    list-style: none;
+  }
+
+  button,
+  input {
+    // padding: 0;
+    // color: #000;
+    // border: none;
+    appearance: none;
+    outline: none;
+    // background-color: transparent;
+  }
+
+  :active,
+  :hover,
+  :focus {
+    outline: 0;
+    outline-offset: 0;
   }
 }
 
@@ -24,8 +47,10 @@
   color: var(--color_black_500, #07000f);
 }
 
+// filter__btn styles
+
 .fbutton {
-  min-width: 320px;
+  width: 100%;
   min-height: 48px;
   display: flex;
   justify-content: space-between;
@@ -101,5 +126,97 @@
   .fbutton.checked & {
     visibility: visible;
     opacity: 1;
+  }
+}
+
+// filter__dropdown styles
+
+.filter__dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: var(--color_white_500, #fff);
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.02),
+    0px 4px 32px 0px rgba(0, 0, 0, 0.02);
+  border-radius: var(--radius, 12px);
+  border: 1px solid var(--color_black_200, rgba(7, 0, 15, 0.1));
+}
+
+// filter__tabs styles
+
+.ftabs {
+  overflow-x: auto;
+
+  // hide scrollbar in Firefox
+  scrollbar-width: none;
+
+  // hide scrollbar in Chrome, Safari
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+.ftabs__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 16px;
+  padding: 0 15px;
+  border-bottom: 1px solid var(--color_black_200, rgba(7, 0, 15, 0.1));
+
+  &::after {
+    content: "|";
+    display: block;
+    width: 15px;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.ftabs__btn {
+  position: relative;
+  padding: 11px 0;
+  font-family: var(--ff_roboto, "Roboto Condensed", sans-serif);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.32px;
+  text-transform: uppercase;
+  color: var(--color_black_300, rgba(7, 0, 15, 0.4));
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.2s ease-out;
+
+  @media (hover: hover) {
+    &:hover {
+      color: var(--color_black_500, #07000f);
+    }
+  }
+
+  &.active {
+    color: var(--color_black_500, #07000f);
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 100%;
+      min-height: 1px;
+      background-color: var(--color_black_500, #07000f);
+      transition: min-height 0.2s ease-out;
+    }
+
+    @media (hover: hover) {
+      &:hover::after {
+        min-height: 2px;
+      }
+    }
   }
 }
