@@ -58,7 +58,7 @@ mixin pagination(amount, current, ellipsis, last, arrows)
 
 mixin fitem(value, title)
     li.fitems__item
-        input.fitems__input(type="checkbox" id= value value= value)
+        input.fitems__input(type="checkbox" id= value value= value data-title= title)
         label.fitems__label(for= value)
             span.fitems__title= title
             span.fitems__checkbox

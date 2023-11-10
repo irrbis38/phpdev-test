@@ -18,16 +18,16 @@ block page
             .filter__tabs.ftabs
                 .ftabs__wrapper
                     ul.ftabs__list
-                        li: button.ftabs__btn.active(type="button" aria-label="Показать список жилых комплексов") Жк
-                        li: button.ftabs__btn(type="button" aria-label="Показать список округов") Округ
-                        li: button.ftabs__btn(type="button" aria-label="Показать список районов") Район
-                        li: button.ftabs__btn(type="button" aria-label="Показать список станций") Метро
+                        li: button.ftabs__btn.active(type="button" aria-label="Показать список жилых комплексов" data-tab="jc") Жк
+                        li: button.ftabs__btn(type="button" aria-label="Показать список округов" data-tab="districts") Округ
+                        li: button.ftabs__btn(type="button" aria-label="Показать список районов" data-tab="areas") Район
+                        li: button.ftabs__btn(type="button" aria-label="Показать список станций" data-tab="metro") Метро
 
-            .filter__labels.flabels
+            .filter__labels.flabels.empty
                 ul.flabels__list
-                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
-                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Басманный") Басманный
-                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
+                    //- li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический" data-id="academic") Академический
+                    //- li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Басманный" data-id="basmanny") Басманный
+                    //- li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический" data-id="central") Центральный
 
             -
                 var jc_list = [
@@ -73,35 +73,36 @@ block page
                     {value: "university", title: "Университет"},
                 ]
 
-            .filter__items-container
-                //- ЖК
-                .filter__items.fitems.active
+            .filter__box
+                .filter__items-container
+                    //- ЖК
+                    .filter__items.fitems.active(data-tab="jc")
 
-                    ul.fitems__list
+                        ul.fitems__list
 
-                        each item in jc_list
-                            +fitem(item.value, item.title)
+                            each item in jc_list
+                                +fitem(item.value, item.title)
 
-                //- Округи
-                .filter__items.fitems
+                    //- Округи
+                    .filter__items.fitems(data-tab="districts")
 
-                    ul.fitems__list
+                        ul.fitems__list
 
-                        each item in districts_list
-                            +fitem(item.value, item.title)
+                            each item in districts_list
+                                +fitem(item.value, item.title)
 
-                //- Районы
-                .filter__items.fitems
+                    //- Районы
+                    .filter__items.fitems(data-tab="areas")
 
-                    ul.fitems__list
+                        ul.fitems__list
 
-                        each item in areas_list
-                            +fitem(item.value, item.title)
+                            each item in areas_list
+                                +fitem(item.value, item.title)
 
-                //- Станции метро
-                .filter__items.fitems
+                    //- Станции метро
+                    .filter__items.fitems(data-tab="metro")
 
-                    ul.fitems__list
+                        ul.fitems__list
 
-                        each item in metro_list
-                            +fitem(item.value, item.title)
+                            each item in metro_list
+                                +fitem(item.value, item.title)
