@@ -133,8 +133,16 @@ function addLabel(inputParams) {
   if (labelOfSelectedInput) {
     labelOfSelectedInput.parentElement.remove();
   } else {
+    // check with cross or without
+    var isWithCross = flabels.dataset.cross === "with";
+    var buttonClassName = "";
+
+    isWithCross
+      ? (buttonClassName = "flabels__btn flabels__btn--cross")
+      : (buttonClassName = "flabels__btn");
+
     var li = document.createElement("LI");
-    li.innerHTML = `<button class="flabels__btn flabels__btn--cross" type="button" aria-label="Удалить фильтр Академический" data-id="${id}">${title}</button>`;
+    li.innerHTML = `<button class="${buttonClassName}" type="button" aria-label="Удалить фильтр Академический" data-id="${id}">${title}</button>`;
 
     li.children[0].addEventListener("click", () =>
       handleRemoveLabel(id, li, inputParams)
