@@ -16,5 +16,5 @@ yarn-error.log
 .vscode/
 
 # Remove below if you push to customer's git
-/html/*
+# /html/*
 /sources/src/libs/*

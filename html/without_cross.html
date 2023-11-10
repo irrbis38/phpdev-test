@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Main</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="shortcut icon" href="images/favicons/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="images/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="images/favicons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/android-chrome-96x96.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="images/favicons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/favicons/mstile-144x144.png">
+    <meta name="msapplication-config" content="images/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/main.min.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <h1 class="title">Filter without cross</h1>
+        <div class="filter">
+          <h2 class="filter__title">Локация</h2>
+          <button class="filter__btn fbutton" type="button" aria-label="Показать или скрыть список фильтров"><span class="icon svg-image-icon-search"></span><span class="fbutton__name">ЖК, Округ, район, метро</span><span class="fbutton__amount">1</span>
+          </button>
+          <div class="filter__dropdown">
+            <div class="filter__tabs ftabs">
+              <div class="ftabs__wrapper">
+                <ul class="ftabs__list">
+                  <li>
+                    <button class="ftabs__btn active" type="button" aria-label="Показать список жилых комплексов" data-tab="jc">Жк</button>
+                  </li>
+                  <li>
+                    <button class="ftabs__btn" type="button" aria-label="Показать список округов" data-tab="districts">Округ</button>
+                  </li>
+                  <li>
+                    <button class="ftabs__btn" type="button" aria-label="Показать список районов" data-tab="areas">Район</button>
+                  </li>
+                  <li>
+                    <button class="ftabs__btn" type="button" aria-label="Показать список станций" data-tab="metro">Метро</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="filter__labels flabels empty" data-cross="without">
+              <ul class="flabels__list"></ul>
+            </div>
+            <div class="filter__box">
+              <div class="filter__items-container">
+                <div class="filter__items fitems active" data-tab="jc">
+                  <ul class="fitems__list">
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="academic" value="academic" data-title="Академический"/>
+                      <label class="fitems__label" for="academic"><span class="fitems__title">Академический</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="basmanny" value="basmanny" data-title="Басманный"/>
+                      <label class="fitems__label" for="basmanny"><span class="fitems__title">Басманный</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="zamoskvorechye" value="zamoskvorechye" data-title="Замоскворечье"/>
+                      <label class="fitems__label" for="zamoskvorechye"><span class="fitems__title">Замоскворечье</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="izmailovo" value="izmailovo" data-title="Измайлово"/>
+                      <label class="fitems__label" for="izmailovo"><span class="fitems__title">Измайлово</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="lyublino" value="lyublino" data-title="Люблино"/>
+                      <label class="fitems__label" for="lyublino"><span class="fitems__title">Люблино</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="lavrushinsky" value="lavrushinsky" data-title="Лаврушинский"/>
+                      <label class="fitems__label" for="lavrushinsky"><span class="fitems__title">Лаврушинский</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="ilyinka" value="ilyinka" data-title="Ильинка"/>
+                      <label class="fitems__label" for="ilyinka"><span class="fitems__title">Ильинка</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="obydensky" value="obydensky" data-title="Обыденский"/>
+                      <label class="fitems__label" for="obydensky"><span class="fitems__title">Обыденский</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="red_october" value="red_october" data-title="Красный октябрь"/>
+                      <label class="fitems__label" for="red_october"><span class="fitems__title">Красный октябрь</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="romanov" value="romanov" data-title="Романов"/>
+                      <label class="fitems__label" for="romanov"><span class="fitems__title">Романов</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="chistye_prudy" value="chistye_prudy" data-title="Чистые пруды"/>
+                      <label class="fitems__label" for="chistye_prudy"><span class="fitems__title">Чистые пруды</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__items fitems" data-tab="districts">
+                  <ul class="fitems__list">
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="central" value="central" data-title="Центральный"/>
+                      <label class="fitems__label" for="central"><span class="fitems__title">Центральный</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="north" value="north" data-title="Северный"/>
+                      <label class="fitems__label" for="north"><span class="fitems__title">Северный</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="north_east" value="north_east" data-title="Северо-Восточный"/>
+                      <label class="fitems__label" for="north_east"><span class="fitems__title">Северо-Восточный</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="east" value="east" data-title="Восточный"/>
+                      <label class="fitems__label" for="east"><span class="fitems__title">Восточный</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__items fitems" data-tab="areas">
+                  <ul class="fitems__list">
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="altufevsky" value="altufevsky" data-title="Алтуфьевский"/>
+                      <label class="fitems__label" for="altufevsky"><span class="fitems__title">Алтуфьевский</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="arbat" value="arbat" data-title="Арбат"/>
+                      <label class="fitems__label" for="arbat"><span class="fitems__title">Арбат</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="airport" value="airport" data-title="Аэропорт"/>
+                      <label class="fitems__label" for="airport"><span class="fitems__title">Аэропорт</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="ivanovskoe" value="ivanovskoe" data-title="Ивановское"/>
+                      <label class="fitems__label" for="ivanovskoe"><span class="fitems__title">Ивановское</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="izmailovo" value="izmailovo" data-title="Измайлово"/>
+                      <label class="fitems__label" for="izmailovo"><span class="fitems__title">Измайлово</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="kapotnya" value="kapotnya" data-title="Капотня"/>
+                      <label class="fitems__label" for="kapotnya"><span class="fitems__title">Капотня</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="konkovo" value="konkovo" data-title="Коньково"/>
+                      <label class="fitems__label" for="konkovo"><span class="fitems__title">Коньково</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                  </ul>
+                </div>
+                <div class="filter__items fitems" data-tab="metro">
+                  <ul class="fitems__list">
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="sokolniki" value="sokolniki" data-title="Сокольники"/>
+                      <label class="fitems__label" for="sokolniki"><span class="fitems__title">Сокольники</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="krasnoselskaya" value="krasnoselskaya" data-title="Красносельская"/>
+                      <label class="fitems__label" for="krasnoselskaya"><span class="fitems__title">Красносельская</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="komsomolskaya" value="komsomolskaya" data-title="Комсомольская"/>
+                      <label class="fitems__label" for="komsomolskaya"><span class="fitems__title">Комсомольская</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="red_Gate" value="red_Gate" data-title="Красные Ворота"/>
+                      <label class="fitems__label" for="red_Gate"><span class="fitems__title">Красные Ворота</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="lubyanka" value="lubyanka" data-title="Лубянка"/>
+                      <label class="fitems__label" for="lubyanka"><span class="fitems__title">Лубянка</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="kropotkinskaya" value="kropotkinskaya" data-title="Кропоткинская"/>
+                      <label class="fitems__label" for="kropotkinskaya"><span class="fitems__title">Кропоткинская</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="frunzenskaya" value="frunzenskaya" data-title="Фрунзенская"/>
+                      <label class="fitems__label" for="frunzenskaya"><span class="fitems__title">Фрунзенская</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="sports" value="sports" data-title="Спортивная"/>
+                      <label class="fitems__label" for="sports"><span class="fitems__title">Спортивная</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                    <li class="fitems__item">
+                      <input class="fitems__input" type="checkbox" id="university" value="university" data-title="Университет"/>
+                      <label class="fitems__label" for="university"><span class="fitems__title">Университет</span><span class="fitems__checkbox"></span></label>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
