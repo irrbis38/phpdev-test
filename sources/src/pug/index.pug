@@ -23,12 +23,85 @@ block page
                         li: button.ftabs__btn(type="button" aria-label="Показать список районов") Район
                         li: button.ftabs__btn(type="button" aria-label="Показать список станций") Метро
 
-            .filter__lables.flables
-                ul.flables__list
-                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
-                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Басманный") Басманный
-                    li: button.flables__btn.flables__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
+            .filter__labels.flabels
+                ul.flabels__list
+                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
+                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Басманный") Басманный
+                    li: button.flabels__btn.flabels__btn--cross(type="button" aria-label="Удалить фильтр Академический") Академический
 
-            ul.filter__items.fitems
-                .fitems__wrapper
+            -
+                var jc_list = [
+                    {value: "academic", title: "Академический"},
+                    {value: "basmanny", title: "Басманный"},
+                    {value: "zamoskvorechye", title: "Замоскворечье"},
+                    {value: "izmailovo", title: "Измайлово"},
+                    {value: "lyublino", title: "Люблино"},
+                    {value: "lavrushinsky", title: "Лаврушинский"},
+                    {value: "ilyinka", title: "Ильинка"},
+                    {value: "obydensky", title: "Обыденский"},
+                    {value: "red_october", title: "Красный октябрь"},
+                    {value: "romanov", title: "Романов"},
+                    {value: "chistye_prudy", title: "Чистые пруды"},
+                ]
+
+                var districts_list = [
+                    {value: "central", title: "Центральный"},
+                    {value: "north", title: "Северный"},
+                    {value: "north_east", title: "Северо-Восточный"},
+                    {value: "east", title: "Восточный"},
+                ]
+
+                var areas_list = [
+                    {value: "altufevsky", title: "Алтуфьевский"},
+                    {value: "arbat", title: "Арбат"},
+                    {value: "airport", title: "Аэропорт"},
+                    {value: "ivanovskoe", title: "Ивановское"},
+                    {value: "izmailovo", title: "Измайлово"},
+                    {value: "kapotnya", title: "Капотня"},
+                    {value: "konkovo", title: "Коньково"},
+                ]
+
+                var metro_list = [
+                    {value: "sokolniki", title: "Сокольники"},
+                    {value: "krasnoselskaya", title: "Красносельская"},
+                    {value: "komsomolskaya", title: "Комсомольская"},
+                    {value: "red_Gate", title: "Красные Ворота"},
+                    {value: "lubyanka", title: "Лубянка"},
+                    {value: "kropotkinskaya", title: "Кропоткинская"},
+                    {value: "frunzenskaya", title: "Фрунзенская"},
+                    {value: "sports", title: "Спортивная"},
+                    {value: "university", title: "Университет"},
+                ]
+
+            .filter__items-container
+                //- ЖК
+                .filter__items.fitems.active
+
                     ul.fitems__list
+
+                        each item in jc_list
+                            +fitem(item.value, item.title)
+
+                //- Округи
+                .filter__items.fitems
+
+                    ul.fitems__list
+
+                        each item in districts_list
+                            +fitem(item.value, item.title)
+
+                //- Районы
+                .filter__items.fitems
+
+                    ul.fitems__list
+
+                        each item in areas_list
+                            +fitem(item.value, item.title)
+
+                //- Станции метро
+                .filter__items.fitems
+
+                    ul.fitems__list
+
+                        each item in metro_list
+                            +fitem(item.value, item.title)
